@@ -4,7 +4,8 @@ export default {
     icon: 'rgba(0, 0, 0, 0.5)',
     iconActive: '#000000',
     albumLine: 'rgba(0, 0, 0, 0.5)',
-    albumName: '#FFFFFF'
+    albumName: '#FFFFFF',
+    background: '#FFFFFF'
   },
   contentMaxWidth: '1200px',
   iconSize: '37.5px',

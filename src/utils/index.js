@@ -1,0 +1,1 @@
+export const textAreaParser = (str) => str.split('\r\n');

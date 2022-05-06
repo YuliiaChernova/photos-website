@@ -1,45 +1,43 @@
 import * as React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { getImage } from 'gatsby-plugin-image';
+import { useAboutData } from '../../hooks/useAboutData';
 import { MainContainer } from '../theme/global-styles';
 import {
-  HeaderContainer,
   ContentContainer,
-  ImageContainer
+  ImageContainer,
+  StyledImage
 } from './style';
+import { HeaderContainer } from '../theme/style';
 
-const about = `
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Justo, dapibus dolor sit
-  aliquet purus velit arcu magna nisl. Id posuere rutrum posuere suscipit tristique
-  ullamcorper integer nulla. Nulla id lacus, duis nec nunc metus eget varius. Semper
-  vulputate morbi tempus dis mi tempus tincidunt. Amet fringilla id leo porttitor cras
-  bibendum placerat. Cras feugiat amet placerat risus placerat integer urna eu et. Volutpat
-  odio ante eget volutpat volutpat. Tincidunt sodales elementum hendrerit consequat in urna
-  porttitor ultrices eu. Vel sed donec morbi integer fermentum.
-`;
+const AboutContent = () => {
 
-const AboutContent = () => (
-  <section>
-    <MainContainer>
-      <HeaderContainer>
-        <h2>About</h2>
-      </HeaderContainer>
-      <ContentContainer>
-        <ImageContainer>
-          <StaticImage
-            src='../../images/placeholder-avatar.jpg'
-            alt='Photographer avatar'
-            placeholder='blurred'
-            layout='fixed'
-            width={227}
-            height={306}
-          />
-        </ImageContainer>
-        <p>
-          {about}
-        </p>
-      </ContentContainer>
-    </MainContainer>
-  </section>
-);
+  const data = useAboutData();
+  const {
+    aboutPageDesription,
+    aboutPageHeader,
+    aboutPagePhoto
+  } = data.allWpPage.edges[0].node.aboutPageAcf;
+  const imageData = getImage(aboutPagePhoto.localFile);
+
+  return (
+    <section>
+      <MainContainer>
+        <HeaderContainer>
+          <h2>{aboutPageHeader}</h2>
+        </HeaderContainer>
+        <ContentContainer>
+          <ImageContainer>
+            <StyledImage image={imageData} alt="photographer" />
+          </ImageContainer>
+          <div className="about-text-container">
+            <p>
+              {aboutPageDesription}
+            </p>
+          </div>
+        </ContentContainer>
+      </MainContainer>
+    </section>
+  );
+}
 
 export default AboutContent;

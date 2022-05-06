@@ -7,7 +7,7 @@ import { HiPhone } from '@react-icons/all-files/hi/HiPhone';
 const links = [
   { icon: <GrApps />, to: '/' },
   { partiallyActive: true, icon: <FaRegUserCircle />, to: '/about' },
-  { partiallyActive: true, icon: <HiPhone />, to: '/contact' }
+  { partiallyActive: true, icon: <HiPhone />, to: '/contacts' }
 ];
 
 const NavLinks = () => (
