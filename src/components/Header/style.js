@@ -5,6 +5,7 @@ export const StyledHeader = styled.header`
   top: 0;
   left: 0;
   z-index: 1000;
+  background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const TextContainer = styled.div`
@@ -30,8 +31,8 @@ export const TextContainer = styled.div`
 export const NavPanel = styled.nav`
   width: 100%;
   display: flex;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 
   ul {
     display: flex;

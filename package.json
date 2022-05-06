@@ -17,8 +17,9 @@
     "gatsby-plugin-sharp": "^4.11.1",
     "gatsby-plugin-styled-components": "^5.11.0",
     "gatsby-source-filesystem": "^4.11.1",
-    "gatsby-source-wordpress": "^6.11.2",
+    "gatsby-source-wordpress": "^6.13.0",
     "gatsby-transformer-sharp": "^4.11.0",
+    "html-react-parser": "^1.4.12",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.8.1",
     "react": "^17.0.1",
@@ -37,7 +38,6 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
