@@ -1,10 +1,10 @@
-export default {
+const theme = {
   colors: {
     text: '#000000',
     icon: 'rgba(0, 0, 0, 0.5)',
     iconActive: '#000000',
     albumLine: 'rgba(0, 0, 0, 0.5)',
-    fullScreenBackground: 'rgba(0, 0, 0, 0.8)',
+    fullScreenBackground: '#FFFFFF',
     albumName: '#FFFFFF',
     background: '#FFFFFF'
   },
@@ -38,3 +38,5 @@ export default {
     desktops: 'only screen and (max-width: 1440px)'
   },
 };
+
+export default theme;

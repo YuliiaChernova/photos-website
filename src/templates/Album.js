@@ -3,36 +3,14 @@ import { graphql } from 'gatsby';
 import Slider from 'react-slick';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
+import { settings } from '../settings';
 import { SliderContainer } from '../components/theme/style';
 
 import { AiOutlineArrowsAlt } from '@react-icons/all-files/ai/AiOutlineArrowsAlt';
+import { AiOutlineClose } from '@react-icons/all-files/ai/AiOutlineClose';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
-export const SamplePrevArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: 'block' }}
-      onClick={onClick}
-    />
-  );
-};
-
-export const settings = {
-  infinite: true,
-  arrows: true,
-  dots: false,
-  fade: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  swipeToSlide: true,
-  prevArrow: <SamplePrevArrow />,
-  nextArrow: <SamplePrevArrow />,
-};
 
 const AlbumTemplate = ({ data }) => {
 
@@ -42,7 +20,10 @@ const AlbumTemplate = ({ data }) => {
     (prevState) => !prevState
   );
 
-  const getSettings = (fullScreen, settings) => fullScreen ? {...settings, arrows: false, dots: true} : settings;
+  const getSettings = (fullScreen, settings) =>
+    fullScreen
+      ? { ...settings, arrows: false, dots: true }
+      : settings;
 
   const photos = data.allWpMediaItem.edges;
   const photoItems = photos.map(({ node }) => (
@@ -56,10 +37,14 @@ const AlbumTemplate = ({ data }) => {
           {photoItems}
         </Slider>
         <div className='full-screen-arrow-container'>
-          <span onClick={onFullScreenHandler}>
-            <AiOutlineArrowsAlt />
-          </span>
-        </div>
+        <span onClick={onFullScreenHandler} role='button' tabIndex={0} onKeyDown={onFullScreenHandler}>
+          {
+            fullScreenMode
+              ? <AiOutlineClose />
+              : <AiOutlineArrowsAlt />
+          }
+        </span>
+      </div>
       </SliderContainer>
     </Layout>
   );

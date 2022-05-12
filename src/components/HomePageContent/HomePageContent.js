@@ -6,7 +6,7 @@ import { MainContainer } from '../theme/global-styles';
 import { useAlbumsNames } from '../../hooks/useAlbumsNames';
 import { useAlbumsCovers } from '../../hooks/useAlbumsCovers';
 import { extractText, createPath } from '../../utils';
-import { settings } from '../../templates/Album';
+import { settings } from '../../settings';
 
 import {
   AlbumCoverContainer,

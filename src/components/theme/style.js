@@ -73,7 +73,7 @@ export const SliderContainer = styled.div`
   }
 
   @media ${({ theme }) => theme.mediaQueries.phones} {
-    max-width: ${({ fullScreenMode }) => fullScreenMode ? '100vw': 'calc(100vw - 60px)'};
+    max-width: ${({ fullScreenMode }) => fullScreenMode ? '100vw': 'calc(100vw - 80px)'};
 
     .slick-slide {
       max-height: none;
