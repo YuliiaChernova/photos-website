@@ -4,6 +4,7 @@ export default {
     icon: 'rgba(0, 0, 0, 0.5)',
     iconActive: '#000000',
     albumLine: 'rgba(0, 0, 0, 0.5)',
+    fullScreenBackground: 'rgba(0, 0, 0, 0.8)',
     albumName: '#FFFFFF',
     background: '#FFFFFF'
   },

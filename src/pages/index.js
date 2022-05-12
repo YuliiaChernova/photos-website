@@ -1,12 +1,13 @@
 import * as React from 'react';
 import Layout from '../components/Layout/';
+import HomePageContent from '../components/HomePageContent';
 
-const IndexPage = () => (
-  <Layout>
-    <div>
-      Hello world
-    </div>
-  </Layout>
-);
+const IndexPage = () => {
+  return (
+    <Layout>
+      <HomePageContent />
+    </Layout>
+  )
+};
 
 export default IndexPage;

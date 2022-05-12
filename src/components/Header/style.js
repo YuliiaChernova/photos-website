@@ -31,8 +31,8 @@ export const TextContainer = styled.div`
 export const NavPanel = styled.nav`
   width: 100%;
   display: flex;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 20px;
+  padding-bottom: 40px;
 
   ul {
     display: flex;

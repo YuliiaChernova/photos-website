@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { useContactsData } from '../../hooks/useContactsData';
 import { textAreaParser } from '../../utils';
 
